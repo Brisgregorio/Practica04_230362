@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
     session({
-        secret: "P4-BadbeatdUri-SesionesHTTP-VariablesDeSesion",
+        secret: "P4-BNGG-SesionesHTTP-VariablesDeSesion",
         resave: false,
         saveUninitialized: false,
         cookie: { maxAge: 5 * 60 * 1000 }, // 5 minutos
