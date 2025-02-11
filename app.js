@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
     session({
-        secret: "P4-BNGG-SesionesHTTP-VariablesDeSesion",
+        secret: "P4-BNGG-ROCOLOCO-SesionesHTTP-VariablesDeSesion",
         resave: false,
         saveUninitialized: false,
         cookie: { maxAge: 5 * 60 * 1000 }, // 5 minutos
@@ -144,11 +144,16 @@ app.get("/status", (req, res) => {
 // Ruta principal
 app.get("/", (req, res) => {
     return res.status(200).json({
-        message: "Welcome! API de Brisa :]",
-        author: "Brisa Nallely Garcia Gregorio",
+        message: "Welcome API Bris:]",
+        author: "Brisa Nalley Garcia Gregorio",
     });
 });
-
+app.get('/sessions', (req, res) => {
+    res.status(200).json({
+        message: 'Sesiones activas',
+        sessions: Object.values(sessions), // Retornar todas las sesiones activas
+    });
+  });
 const PORT = 3600;
 
 // Iniciar el servidor
